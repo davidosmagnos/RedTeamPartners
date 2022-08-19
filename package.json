@@ -1,5 +1,5 @@
 {
-  "name": "practice-app",
+  "name": "redteampartners",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -40,5 +40,17 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "description": "```\r npm install\r ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidosmagnos/RedTeamPartners.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidosmagnos/RedTeamPartners/issues"
+  },
+  "homepage": "https://github.com/davidosmagnos/RedTeamPartners#readme"
 }
