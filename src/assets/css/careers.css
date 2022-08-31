@@ -1,0 +1,221 @@
+:root{
+    --red:#D41539;
+    --gray:#4A494A;
+    --line:#4A494A3A;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+.landingPage-careers{
+    height:100vh;
+    width:90vw;
+    border-bottom:1px solid var(--line);
+    margin:auto;
+    display:flex;
+    align-items: center;
+}
+.tagline-careers{
+    color:var(--gray);
+    font-weight: 500;
+}
+
+.landingPage-careers .right{
+    width: 60%;
+}
+.landingPage-careers .right .logo-wrapper{
+    width: 25vw;
+    height: auto;
+}
+.company-logo{
+    width:100%;
+    height: auto;
+}
+.landingPage-careers .textContent{
+    display: flex;
+    flex-direction: column;
+    gap:1.5vw;
+    margin-top: 1.4vw;
+}
+.textContent .subtext{
+    font-size: 2vw;
+    font-weight: 500;
+    color: var(--gray);
+    margin-top: 3vw;
+}
+
+.left .careers-bg{
+    background: url(./../bg4.png);
+    width:40vw;
+    height: 40vw;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: -5vw;
+    position: relative;
+    right:-10vw
+}
+
+
+.jobOpenings{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jobs-wrapper{
+    width:90%;
+    height: 90%;
+    background-color: #d1d1d1;
+
+}
+.jobs-title{
+    text-align: center;
+    margin-top: 3vw;
+}
+#jobSearch{
+    margin:auto;
+    width:90%;
+    display: block;
+    padding: 0.5vw;
+    border-radius: 5px;
+    margin-top:1vw;
+    border:1px solid var(--gray);
+}
+
+.openings-table{
+    margin: auto;
+    width: 90%;
+    margin-top: 2vw;
+    height: 60%;
+    overflow-y: scroll;
+}
+
+.jobs{
+    border-collapse: collapse;
+    width:100%;
+}
+.jobs :is(td,th){
+    padding:.5vw;
+}
+
+.jobs th{
+    text-align: left;
+    font-weight: 500;
+}
+
+.jobs .job-details{
+    border-bottom: 1px solid var(--line);
+}
+
+.jobs .job-details td{
+    color:var(--red)
+}
+.jobs th:first-child{
+    width:30%
+}
+
+.jobs-wrapper .loadMore{
+    border: none;
+    background-color: var(--red);
+    color:white;
+    padding:.6rem 2rem;
+    border-radius: 10px;
+    display: block;
+    margin: 1.5vw auto;
+}
+
+
+
+.bePartOfUs{
+    height: 100vh;
+    width: 90vw;
+    border-top: var(--line) 1px solid;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.form-intro{
+    margin-top:3vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:2vw;
+}
+.form-intro .title{
+    color:var(--gray);
+    font-weight: 500;
+}
+
+.careers-mainForm{
+    display:flex;
+    flex-direction: column;
+    width:55vw;
+    gap:3vw;
+}
+
+.fullName{
+    display: flex;
+    gap:3vw
+}
+#fname,#lname{
+    flex:1
+}
+.text-field{
+    height: 3vw;
+    padding:.5vw;
+    border-radius:10px;
+    border:1px solid var(--gray)
+}
+
+.submitForm{
+    border:none;
+    background-color: var(--red);
+    border-radius: 10px;
+    padding:1vw;
+    color:white;
+    font-weight: 600;
+    font-size: 1.2vw;
+    width:30%;
+}
+
+.bePartOFus .left,.bePartOFus .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left .careers-bg1{
+    background: url(./../bg2.png);
+    width:40vw;
+    height: 40vw;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: -5vw;
+    position: relative;
+    right:-5vw
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.fileUp{
+    padding:.5vw;
+    border:1px solid var(--gray);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.fileUp svg{
+    fill: var(--gray);
+}
+
+.uploadFiles{
+    display: flex;
+    gap:3vw;
+}

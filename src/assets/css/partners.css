@@ -1,0 +1,159 @@
+:root{
+    --red:#D41539;
+    --gray:#4A494A;
+    --line:#4A494A3A;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+    scroll-behavior: smooth;
+}
+.partners-form{
+    height: 100vh;
+    width: 90vw;
+    border-top: var(--line) 1px solid;
+    border-bottom: var(--line) 1px solid;
+    margin: auto;
+    display: flex;
+}
+.redText{
+    color:var(--red)
+}
+
+.form-intro{
+    margin-top:3vw;
+    width: 100%;
+}
+.form-intro .title{
+    color:var(--gray)
+}
+
+
+.partners-mainForm{
+    display:flex;
+    flex-direction: column;
+    width:55vw;
+    gap:3vw;
+    margin-top: 5vw;
+}
+.fullName{
+    display: flex;
+    gap:3vw
+}
+#fname,#lname{
+    flex:1
+}
+.text-field{
+    height: 3vw;
+    padding:.5vw;
+    border-radius:10px;
+    border:1px solid var(--gray)
+}
+
+.submitForm{
+    border:none;
+    background-color: var(--red);
+    border-radius: 10px;
+    padding:1vw;
+    color:white;
+    font-weight: 600;
+    font-size: 1.2vw;
+    width:30%;
+}
+
+.left,.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.partners-bg{
+    background: url(./../bg3.jpg);
+    width:40vw;
+    height: 40vw;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: -5vw;
+    position: relative;
+    right:-5vw
+}
+
+.whyRedTeam{
+    height: 100vh;
+    background-color: #d1d1d1;
+    padding-top: 4vw;
+}
+.whyRedTeam .textContent{
+    width:60vw;
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    gap:3vw;
+}
+.whyRedTeam .title{
+    font-weight: 600;
+    font-size: 2vw;
+    text-align: center;
+}
+.whyRedTeam .text{
+    text-align: center;
+}
+
+.whyRedTeam-columns{
+    height:30vh;
+    margin-top: 3vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:4vw;
+}
+.whyRedTeam-columns .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.whyRedTeam-columns .item .item-desc{
+    width: 19vw;
+    text-align: center;
+}
+.whyRedTeam-columns .item .svg svg{
+    width: 5vw;
+    height: 5vw;
+    fill: var(--red);
+}
+
+.benefits-wrapper{
+    display: flex;
+    column-gap:15vw;
+    row-gap: 5vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.benefit-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.benefit-item svg{
+    width: 8vw;
+    height: 8vw;
+    fill:var(--red)
+}
+
+.benefitsRTP{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.benefitsRTP .title{
+    text-align: center;
+    font-weight: 500;
+    color:var(--gray)
+}

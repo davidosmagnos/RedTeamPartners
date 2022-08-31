@@ -1,9 +1,9 @@
 <template>
   <div class="header" id="header">
-    <img src="./../assets/RTPlogo.png" alt="" class="logo">
+    <a href="/"><img src="./../assets/RTPlogo.png" alt="" class="logo"></a>
     <div class="nav-items-cont">
       <ul class="nav-items">
-        <a href="#">
+        <a href="/services">
           <li class="items">Services 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -11,7 +11,7 @@
           </li>
         </a>
 
-        <a href="#">
+        <a href="partners">
           <li class="items">Partners 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -19,7 +19,7 @@
           </li>
         </a>
 
-        <a href="#">
+        <a href="know-how">
           <li class="items">Know How 
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -67,7 +67,6 @@ export default {
   methods:{
     headerScroll:function(){
       var currentScroll = window.pageYOffset;
-       console.log(currentScroll)
       if(prevScroll > currentScroll){
         document.getElementById("header").style.top = "0px";
         document.getElementById("header").style.backgroundColor = "white"
@@ -105,24 +104,29 @@ export default {
     top:0;
     display:flex;
     align-items: center;  
+    z-index: 999999999;
   }
   .logo{
     width:16em;
     margin-left: 3em;
   }
   .nav-items{
-    display: flex;
-    gap:.7vw;
+    /* display: flex;
+    gap:3vw;*/
+    margin-left: 3vw; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width:70vw
   }
   .nav-items a{
     text-decoration: none;
-    color:#4A494A
+    color:#4A494A;
   }
   .items{
     display:inline-block;
     font-weight: 600;
   }
-  .items a:hover{
+  .nav-items a:hover{
     color: #d41539;
   }
   .items svg{

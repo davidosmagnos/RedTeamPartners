@@ -1,0 +1,279 @@
+#app {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #000;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  body{
+    margin: 0 !important;
+    overflow-x: hidden;
+  }
+  .redText{
+    color:#D41539
+  }
+  .circles-logo{
+    width: fit-content;
+    background-color: #D41539;
+    border-radius: 50%;
+    padding:1.1em
+  }
+  .service-process{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    background-color: #fff9f9;
+  }
+  .service-process-title{
+    text-align: center;  
+    color:#4A494A;
+  }
+  .service-process .outer-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 6vw;
+    margin-top: 4em;
+  }
+  .service-process .outer-cont .circles-logo svg{
+    fill: white;
+    width: 3vw;
+    height: 3vw;
+  }
+  .service-process .inner-cont{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+  }
+  .service-process .inner-cont:hover{
+    transform: scale(1.1);
+  }
+  .step{
+  text-align: center;
+  font-size: 1.3vw;
+  font-weight: 500;
+  }
+  .benefits{
+    display:flex;
+    align-items: center;
+    height: 100vh;
+  
+  }
+  .benefits-title{
+    font-size: 2vw;
+    font-weight: 500;
+    position: absolute;
+    top:3vw;
+    color:#4A494A
+  }
+  .benefits-bg{
+    height: 75vh;
+    width: 100%;
+    background: #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .benefits-cont{
+    display: flex;
+    width: 85%;
+    margin-top: 4vw;
+    flex-wrap: wrap;
+    row-gap: 8vw;
+    column-gap: 8vw;
+    justify-content: center;
+  }
+  
+  .space{
+    height: 100vh;
+    background-color: white;
+  }
+  
+  .testimonies{
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom:1px solid #4A494A3a;
+    width:75vw;
+    margin:auto;
+  }
+  .testimonies-title{
+    margin-bottom:5vw;
+    color:#4A494A;
+    font-weight: 500;
+    font-size: 2vw;
+  }
+  .testimonials{
+    background-color: #D41539;
+    height: 30vw;
+    width:20vw;
+    border-radius: 5px;
+    padding: 1.5vw;
+    box-sizing: border-box;
+    position: relative;
+    transition: .2s;
+  }
+  .testimonials:hover{
+    transform:translateY(-4px)
+  }
+  .testimonials-cont{
+    display: flex;
+    gap:8vw;
+  }
+  
+  .quote{
+    height: 6vw;
+    width: 6vw;
+    display: flex;
+    fill:white
+  }
+
+  .hithere{
+    animation: hithere 2s ease infinite;
+  }
+  @keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  .quote svg{
+    height: 100%;
+    width: 100%;
+    transform:rotate(15deg);
+  }
+  .testimonials-text .text{
+    color:white;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1vw;
+  
+  }
+  .testimonials-author .author{
+    color:white;
+    text-align: right;
+    font-weight: 600;
+    font-size: 1vw;
+    position: absolute;
+    bottom:1vw;
+    right:1vw;
+    width:15vw
+  }
+  
+  .problem-cont{
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .problem-cont .content{
+    display: flex;
+    background-color: #d1d1d1;
+    width: 100%;
+    justify-content: center;
+    padding:2vw;
+    gap:5vw;
+    margin-top:5vw;
+  }
+  .content .problem,.content .technology{
+    width:30vw;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .problem .redText,.technology .redText,.delivery .redText{
+    font-weight: 600;
+  }
+  
+  .problems-title{
+    width:40vw;
+    text-align: center;
+    margin-top:5vw
+  }
+  .problems-title .title{
+    color:#4A494A;
+    font-weight: 500;
+    font-size: 3.5vw;
+  }
+  .delivery{
+    display:flex;
+    flex-direction: column;
+    width:75vw;
+    justify-content:center;
+    align-items: center;
+    margin-top: 3vw;
+    border-bottom: 1px solid #4A494A3a;
+  }
+  
+  
+  .steps-cont{
+    display:flex;
+    gap:.5vw;
+    text-align: center;
+    padding-bottom:5vw;
+  }
+  .steps{
+    display:flex;
+    flex-direction: column;
+    width:8vw;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circleSteps{
+    background-color: #D41539;
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    padding:.7vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+  }
+  .circleSteps svg{
+    fill: #fff;
+    width:100%;
+    height: auto;
+  }
+  
+  .ads{
+    background-color: #D41539;
+    width:100vw;
+    height:15vw;
+    display:flex;
+    position:relative;
+    align-items:center;
+    margin: 5vw 0px;
+    
+  }
+  .pic{
+    background-image: url(./../RedTeamBG.png);
+    height: 100%;
+    width: 50vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 10px 0px 10px 4px #0000003a;
+  }
+  .ads-texts{
+    color:white;
+    margin:auto;
+    font-weight: 500;
+    font-size: 4vw;
+  } 
+  

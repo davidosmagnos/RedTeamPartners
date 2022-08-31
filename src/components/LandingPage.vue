@@ -1,13 +1,14 @@
 <template>
 <div class="main-cont">
     <div class="headerVideo">
-    <video src="./../assets/video.mp4" autoplay loop playsinline disablePictureInPicture></video>
+    <video src="./../assets/video.mp4" autoplay loop playsinline disablePictureInPicture muted></video>
 </div>
     <div class="home-page">
         <div class="inner-cont">
-            <h1 class="tagline">Cybersecurity &#8211;<br><span class="redText">Simplified!</span></h1>
-            <p class="subText">Manage the Information. Manage the World. Get Ready. Make it Simple. Red Team Partners.Your Partner in Cyberworld.</p>
-            <button class="action-button">Book a call</button>
+            <p class="welcome">WELCOME TO RED TEAM PARTNERS</p>
+            <h1 class="tagline"><span v-html="tagline"></span></h1>
+            <p class="subText">{{subtext}}</p>
+            <span v-html="buttontext" class="button-span"></span>
         </div>
     </div>
 </div>
@@ -15,11 +16,16 @@
 <script>
 export default{
     name: "landing-page",
+    props:{
+        tagline:String,
+        subtext:String,
+        buttontext:String
+    }
 };
 
 </script>
 
-<style scoped>
+<style>
 *{
     margin:0;
     padding:0;
@@ -39,16 +45,27 @@ export default{
 }
 .tagline{
     color:#4A494A;
-    font-size: 3.5vw;
     text-align: right;
+    font-weight: 600;
+    
 }
-.redText{
-    color:#D41539;
+.smallTag{
+    font-size: 2.5vw;
+}
+.bigTag{
+    font-size: 3.5vw;
+}
+.EbigTag{
+    font-size: 5vw;
+}
+.welcome{
+    text-align: right;
 }
 .subText{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     width:30vw;
     text-align: right;
+    margin-left: auto;
 }
 .inner-cont{
     margin-right: 3vw;
@@ -56,6 +73,7 @@ export default{
     flex-direction: column;
     gap:3vw;
     padding: 0 1.5em;
+    width:35vw
 }
 .action-button{
     background-color: #D41539;
@@ -78,6 +96,10 @@ export default{
 .headerVideo video{
     height: auto;
     width: 95%;
+    margin-left: auto;
+}
+.button-span{
+    display: block;
     margin-left: auto;
 }
 </style>

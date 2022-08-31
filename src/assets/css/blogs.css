@@ -1,0 +1,31 @@
+:root{
+--red:#D41539;
+--gray:#4A494A;
+--line:#4A494A3A;
+}
+.landingpage-blogs{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color:var(--gray)
+}
+
+.landingpage-blogs .title{
+    font-size:3rem;
+}
+.landingpage-blogs .subtext{
+    margin-top: 3rem;
+    font-size: 1.3rem;
+}
+
+.blogs-wrapper{
+    display: flex;
+    gap:4vw;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2vw;
+}
+

@@ -1,0 +1,88 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+:root{
+    --red:#D41539;
+    --gray:#4A494A;
+    --line:#4A494A3A;
+}
+.redText{
+    color:var(--red)
+}
+.services-landingpage{
+    height: 80vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.services-landingpage .title{
+    color:var(--gray);
+    font-weight: 500;
+    font-size: 4vw;
+    text-align: center;
+}
+.services-landingpage .textContent{
+    width: 55vw;
+}
+.services-landingpage .text{
+    text-align: center;
+    font-weight: 500;
+}
+
+.services-wrapper{
+    width:60vw;
+    margin:auto;
+    display:flex;
+    flex-wrap: wrap;
+    gap:4vw;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3vw;
+}
+.service{
+    height: 15vw;
+    width:15vw;
+    background-color: var(--red);
+    border-radius: 10px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition:.2s;
+    padding:.5vw;
+    position: relative;
+}
+
+.service:hover{
+    scale: 1.1;
+    transition: .2s;
+    height:20vw
+}
+.service:hover::after{
+    content:"Learn More";
+    margin-top: .5vw;
+    font-weight: 600;
+    position: absolute;
+    bottom:2vh;
+    text-decoration: underline;
+}
+
+
+.gray-bg{
+    background-color: #d1d1d1;
+    height: 30vh;
+    width: 100vw;
+    position:absolute;
+    z-index: -2;
+}
+
+.services-wrapper a{
+    text-decoration: none;
+}

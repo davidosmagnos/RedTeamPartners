@@ -1,0 +1,32 @@
+:root{
+    --red:#D41539;
+    --gray:#4A494A;
+    --line:#4A494A3A;
+    }
+    .landingpage-news{
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color:var(--gray)
+    }
+    
+    .landingpage-news .title{
+        font-size:3rem;
+    }
+    .landingpage-news .subtext{
+        margin-top: 3rem;
+        font-size: 1.3rem;
+    }
+    
+    .news-wrapper{
+        display: flex;
+        gap:4vw;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 2vw;
+    }
+    
+    

@@ -1,0 +1,133 @@
+:root{
+    --red:#D41539;
+    --gray:#4A494A;
+    --line:#4A494A3A;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.redText{
+    color:var(--red);
+}
+.bookCall{
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:var(--gray);
+    gap:1.5vw
+}
+.bookCall .tagline{
+    font-weight: 500;
+}
+.bookCall .bookCall-button{
+    border: none;
+    background-color: var(--red);
+    padding:1vw 5vw;
+    color:#fff;
+    font-size: 1.5vw;
+    border-radius: 10px;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+}
+
+.main-footer{
+    width:90vw;
+    border-top: 1px solid var(--line);
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.links-cont{
+    display: flex;
+    margin-top: 3vw;
+    gap: 3vw;
+    height: fit-content;
+    
+}
+.link-column{
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+    gap:1.5vw
+}
+.column-title{
+    font-weight: 500;
+    padding-bottom: 1vw;
+}
+
+.link-column a{
+    text-decoration: none;
+    color: black;
+}
+.link-column a:hover{
+    text-decoration: underline;
+}
+
+.contact-us{
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap:2.5vw;
+    width: 25vw;
+}
+input[name='emailContact']{
+    border: 1px solid var(--gray);
+    height: 3vw;
+    width: 75%;
+    border-radius: 10px;
+    padding:.5vw
+}
+.send-email{
+    background-color: var(--red);
+    border: none;
+    height: 3vw;
+    width: 20%;
+    border-radius: 10px;
+    color: white;
+    margin-left: .2vw;
+}
+.contact-us .text{
+    font-weight: 500;
+}
+
+.contact-us h1{
+    font-weight: 600;
+    color: var(--gray);
+    text-align: center;
+}
+
+.link-buttons{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1vw
+}
+.link-buttons svg{
+    height: 3vw;
+    width: 3vw;
+    fill:var(--red)
+}
+
+.footer-logo{
+    width: 25vw;
+    position: relative;
+    top:-5vw
+
+}
+.footer-logo img{
+    width: 100%;
+    height: auto;
+}
