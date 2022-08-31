@@ -1,0 +1,129 @@
+:root{
+    --red:#D41539;
+    --gray:#4A494A;
+    --line:#4A494A3A;
+}
+.langdingPage-getintouch{
+    height:100vh;
+    display:flex;
+    align-items: center;
+}
+.textContent{
+    background: url(./../bubbles.png);
+    height: 70vh;
+    width: 100vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.texts-wrapper{
+    color:var(--gray);
+    margin-right: auto;
+    margin-left: 20vw;
+    margin-top: 15vw;
+    width: fit-content;
+}
+
+.texts-wrapper .title{
+    font-size: 5vw;
+    font-weight: 500;
+}
+.texts-wrapper .subtext{
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+.contact-details{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    align-items: center;
+    
+}
+
+.grayBg{
+    background-color: #d1d1d1;
+    height: 40vh;
+    z-index: -2;
+    width: 100vw;
+    position: absolute;
+}
+.bold{
+    font-weight: 700;
+}
+
+.getintouch{
+    height:100vh;
+    margin-top: 3vw;
+}
+
+
+.contact{
+    width: 90vw;
+    height: 90vh;
+    box-shadow: 5px 5px 10px 5px var(--line);
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    padding-right: 2vw;
+}
+
+.contact-left{
+    width:20%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:4vw;
+}
+.contact-right{
+    width:80%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    gap:1vw;
+}
+
+.contact-left h1{
+    position: relative;
+    left:3vw;
+}
+
+.contact-left img{
+    width:100%;
+    height: auto;
+}
+
+.field{
+    width: 70%;
+    height: 2.4vw;
+    border-radius: 10px;
+    background-color: #d1d1d1;
+    margin-right: 3vw;
+    border:none;
+    padding:.5vw;
+    outline: none;
+}
+
+.message.field{
+    resize: none;
+    height: 50%;
+}
+
+.buttonSubmit{
+    background-color: var(--gray);
+    padding:1rem 2rem;
+    color: white;
+    border-radius: 10px;
+    border:none;
+    margin-right: 3vw;
+}
+
+
+.field::placeholder{
+    font-weight: 600;
+}

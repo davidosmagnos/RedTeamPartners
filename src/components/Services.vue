@@ -46,6 +46,5 @@
 }
     }
 </script>
-<style scoped>
-    @import './../assets/css/services.css'
+<style scoped src='./../assets/css/services.css'> 
 </style>
