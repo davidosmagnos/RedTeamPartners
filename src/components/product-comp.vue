@@ -1,9 +1,9 @@
 <template>
-    <div class="product-comp">
-        <div class="product-icon" :class="direction">
+    <div class="product-comp" :class="direction">
+        <a :href="link"><div class="product-icon">
             <span class="product-name">{{prodName}}</span>
-        </div>
-        <div class="product-description" :class="direction">
+        </div></a>
+        <div class="product-description">
             <p class="description">{{prodDescription}}</p>
         </div>
     </div>
@@ -14,7 +14,8 @@
         props:{
             direction:String,
             prodDescription:String,
-            prodName:String
+            prodName:String,
+            link:String,
 
         },
     }
@@ -31,25 +32,36 @@
         padding:.5vw;
         width: 10vw;
         height: 10vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .product-comp{
-        width: 70%;
+        width: 90%;
         gap:2vw;
         padding-bottom: 2vh;
+        display: flex;
     }
     .product-description{
-        width:60%;
+        width:75%;
         height: 10.5vw;
         border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: center;
     }
 
-    .floatRight{
-        float: right;
-        margin-left:1vw;
+    .rightDir{
+        flex-direction: row-reverse;
         text-align: right;
     }
-    .floatLeft{
-        float:left;
-        margin-right:1vw;
+
+    .product-name{
+        color:white;
+        font-weight: 600;
     }
+    
+    .product-comp a{
+        text-decoration: none;
+    }
+
 </style>

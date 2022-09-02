@@ -1,12 +1,9 @@
 <template>
     <Header/>
-    <div class="products-wrapper" ref="productsWrapper">
+    <div class="products-wrapper" id="productsWrapper">
         <div class="title">
             <span>Services under <span class="redText">Application Testing</span></span>
         </div>
-        <ProductComp direction='floatLeft' prod-name="hi"/>
-        <ProductComp direction='floatRight'/>
-        <ProductComp direction='floatLeft'/>
     </div>
     <div class="whys">
         <div class="why1">
@@ -30,7 +27,7 @@
     import Footer from "./Footer.vue";
     import PartnerSlide from "./PartnerSlide.vue";
     import ProductComp from "./product-comp.vue"
-    import {defineComponent} from "vue"
+    // import {defineComponent} from "vue"
     import {createApp} from "vue"
     export default{
         name:"Products-page",
@@ -38,18 +35,31 @@
             Header,
             Footer,
             PartnerSlide,
-            ProductComp,
+            // ProductComp,
         },
         mounted(){
-            var newProduct = defineComponent({extends:ProductComp,},{
-                direction:"floatRight",
-                prodName:"Henlo",
-                prodDescription:"dasdasdasdasdasdadasdasddadasd",
-            })
-            createApp(newProduct).mount(this.$refs.productsWrapper);
+             for(let i=0;i<10;i++){
+                let dir;
+                if(i%2==0){
+                    dir = ""
+                }
+                else if(i%2==1){
+                    dir = "rightDir"
+                }
+                const newProduct = createApp(ProductComp,{
+                    prodName:"Henlo",
+                    direction:dir,
+                    link:"#",
+                    prodDescription:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ratione, tempore molestiae, et tenetur eaque aspernatur repellendus labore debitis ex voluptatum accusantium vero saepe. Sed molestiae alias accusantium dolorem itaque!"
+                });
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("prods-cont")
+                newProduct.mount(wrapper)
+                document.querySelector("#productsWrapper").appendChild(wrapper)
+            }
             
         }
     }
 </script>
-<style scoped src="./../assets/css/products.css">
+<style src="./../assets/css/products.css">
 </style>
