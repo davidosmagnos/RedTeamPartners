@@ -1,13 +1,12 @@
 <template>
     <Header/>
-    <div class="products-wrapper">
+    <div class="products-wrapper" ref="productsWrapper">
         <div class="title">
             <span>Services under <span class="redText">Application Testing</span></span>
         </div>
-        <ProductComp direction='floatLeft'/>
+        <ProductComp direction='floatLeft' prod-name="hi"/>
         <ProductComp direction='floatRight'/>
         <ProductComp direction='floatLeft'/>
-        <ProductComp direction='floatRight'/>
     </div>
     <div class="whys">
         <div class="why1">
@@ -31,6 +30,8 @@
     import Footer from "./Footer.vue";
     import PartnerSlide from "./PartnerSlide.vue";
     import ProductComp from "./product-comp.vue"
+    import {defineComponent} from "vue"
+    import {createApp} from "vue"
     export default{
         name:"Products-page",
         components:{
@@ -38,6 +39,15 @@
             Footer,
             PartnerSlide,
             ProductComp,
+        },
+        mounted(){
+            var newProduct = defineComponent({extends:ProductComp,},{
+                direction:"floatRight",
+                prodName:"Henlo",
+                prodDescription:"dasdasdasdasdasdadasdasddadasd",
+            })
+            createApp(newProduct).mount(this.$refs.productsWrapper);
+            
         }
     }
 </script>

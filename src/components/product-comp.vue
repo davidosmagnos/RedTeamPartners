@@ -1,10 +1,10 @@
 <template>
     <div class="product-comp">
         <div class="product-icon" :class="direction">
-            
+            <span class="product-name">{{prodName}}</span>
         </div>
         <div class="product-description" :class="direction">
-            <p class="description"> consectetur adipisicing elit. Commodi perspiciatis dignissimos obcaecati non nam? Sapiente quaerat rerum id beatae dolore amet? Nisi quibusdam facere ipsam soluta repellendus debitis amet quisquam?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum, quaerat? Enim quasi voluptatum nemo minima iste consequuntur dolores doloremque debitis explicabo, accusantium optio iure architecto facilis quisquam vel temporibus vitae?</p>
+            <p class="description">{{prodDescription}}</p>
         </div>
     </div>
 </template>
@@ -13,7 +13,10 @@
         name:"product-component",
         props:{
             direction:String,
-        }
+            prodDescription:String,
+            prodName:String
+
+        },
     }
 </script>
 <style scoped>
