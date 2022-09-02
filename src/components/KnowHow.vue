@@ -5,10 +5,7 @@
             <div class="title">
                 <span><span class="redText">Blogs</span></span>
             </div>
-            <div class="blogs-wrapper">
-                <Blogs link='/' title="Title:The Title" description='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....'/>
-                <Blogs link='/' title="Title:The Title" description='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....'/>
-                <Blogs link='/' title="Title:The Title" description='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....'/>
+            <div class="blogs-wrapper" id="blogs-wrapper">
             </div>
             <a href="/blogs" class="seeMore">See More >></a>
         </div>
@@ -16,10 +13,7 @@
             <div class="title">
                 <span>Our latest <span class="redText">work </span>and <span class="redText">news</span></span>
             </div>
-            <div class="news-wrapper">
-                <News img="bg1.jpg" link='/' title="Title:The Title" description='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....'/>
-                <News img="bg1.jpg" link='/' title="Title:The Title" description='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....'/>
-                <News img="bg1.jpg" link='/' title="Title:The Title" description='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....'/>
+            <div class="news-wrapper" id="news-wrapper">
             </div>
             <a href="/news" class="seeMore">See More >></a>
         </div>
@@ -83,6 +77,9 @@
     import PartnerSlide from "./PartnerSlide.vue";
     import Blogs from "./blogs-component.vue";
     import News from "./news-component.vue";
+
+    import {createApp} from 'vue';
+
     export default{
         name:"KnowHow-page",
         components:{
@@ -90,8 +87,8 @@
             Footer,
             LandingPage,
             PartnerSlide,
-            Blogs,
-            News
+            // Blogs,
+            // News
         },
         mounted:()=>{
             const questions = document.querySelectorAll(".question");
@@ -102,6 +99,35 @@
                     answer[index].classList.toggle("inactive")
                 })
             })
+
+
+            for(let i=0;i<3;i++){
+                    const newBlog = createApp(Blogs,{
+                        title:"Title:The Title",
+                        description:'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....',
+                        link:"/"
+                });
+
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("bloggs-cont")
+                newBlog.mount(wrapper)
+                document.querySelector("#blogs-wrapper").appendChild(wrapper)
+            }
+            for(let i=0;i<3;i++){
+                    const newNews = createApp(News,{
+                        title:"Title:The Title",
+                        description:'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....',
+                        link:"/",
+                        img:"bg3.jpg",
+
+                });
+
+                const wrapper = document.createElement("div");
+                wrapper.classList.add("newss-cont")
+                newNews.mount(wrapper)
+                document.querySelector("#news-wrapper").appendChild(wrapper)
+            }
+
         }
     }
 </script>

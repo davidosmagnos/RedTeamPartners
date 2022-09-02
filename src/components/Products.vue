@@ -58,6 +58,9 @@
                 document.querySelector("#productsWrapper").appendChild(wrapper)
             }
             
+        },
+        created(){
+            console.log(this.$route.query)
         }
     }
 </script>

@@ -7,6 +7,10 @@
     padding:0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
+
 .blogs-wrapper,.news-wrapper{
     display: flex;
     gap:4vw;
@@ -44,6 +48,7 @@
     gap:1.5vw;
     align-items: center;
     padding-bottom: 5vw;
+    width: 100vw;
 }
 .supportHub .title{
     font-size: 3vw;
