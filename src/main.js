@@ -10,6 +10,7 @@ import Blogs from "./components/Blogs.vue"
 import News from "./components/News.vue"
 import GetInTouch from "./components/GetInTouch.vue"
 import Products from "./components/Products.vue"
+import Admin from "./components/admin.vue"
 import {createRouter,createWebHistory} from 'vue-router'
 
 const routes = [
@@ -62,6 +63,11 @@ const routes = [
         path:"/products",
         name:"Products",
         component:Products
+    },
+    {
+        path:"/admin",
+        name:"Admin",
+        component:Admin
     }
 ]
 
