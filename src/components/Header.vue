@@ -1,4 +1,48 @@
 <template>
+
+<!-- popups -->
+<div class="services-drp dropdown inactive-drp">
+  <ul class="drp-list">
+    <li class="items"><a href="/products?prodName=application-testing">Application Testing</a></li>
+    <li class="items"><a href="/products?prodName=infrastructure-testing">Infrastructure Testing</a></li>
+    <li class="items"><a href="/products?prodName=social-engineering">Social Engineering</a></li>
+    <li class="items"><a href="/products?prodName=accreditation">Accreditation</a></li>
+    <li class="items"><a href="/products?prodName=subscription-services">Subscription Services</a></li>
+  </ul>
+</div>
+
+<div class="partners-drp dropdown inactive-drp">
+  <ul class="drp-list">
+    <li class="items"><a href="/partners">Become a Partner</a></li>
+  </ul>
+</div>
+
+<div class="knowHow-drp dropdown inactive-drp">
+  <ul class="drp-list">
+    <li class="items"><a href="/blogs">Blog</a></li>
+    <li class="items"><a href="/news">Cybersecurity News</a></li>
+    <li class="items"><a href="/know-how#newsletter">Subsribe to our Newsletter</a></li>
+    <li class="items"><a href="">Glossary</a></li>
+    <li class="items"><a href="">Site Map</a></li>
+  </ul>
+</div>
+
+<div class="learnMore-drp dropdown inactive-drp">
+  <ul class="drp-list">
+    <li class="items"><a href="/about-us">About us</a></li>
+    <li class="items"><a href="/careers">Careers</a></li>
+  </ul>
+</div>
+
+<div class="information-drp dropdown inactive-drp">
+  <ul class="drp-list">
+    <li class="items"><a href="/get-in-touch">Get in touch</a></li>
+    <li class="items"><a href="">Privacy Policy</a></li>
+    <li class="items"><a href="">Tems & Condition</a></li>
+  </ul>
+</div>
+
+
   <div class="header" id="header">
     <a href="/"><img src="./../assets/RTPlogo.png" alt="" class="logo"></a>
     <div class="nav-items-cont">
@@ -63,6 +107,48 @@ export default {
   name: 'Header-comp',
   mounted(){
     window.addEventListener("scroll",this.headerScroll,true);
+
+
+    const dropdowns = document.querySelectorAll(".dropdown");
+    const headerItems = document.querySelectorAll(".nav-items .items")
+
+
+    window.addEventListener("load",()=>{
+      headerItems.forEach((element,index)=>{
+        if(index!=5){
+          var x = window.scrollX + element.getBoundingClientRect().left-(element.offsetWidth/2);
+          var y = window.scrollY + element.getBoundingClientRect().top+(element.offsetHeight);
+          dropdowns[index].style.top = y+"px";
+          dropdowns[index].style.left = x+"px"
+        }
+      })
+    })
+    
+  
+
+    headerItems.forEach((element,index)=>{
+      if(index!=5){
+        element.addEventListener("mouseover",()=>{
+          if(document.querySelector(".active-drp")!=null){
+            document.querySelector(".active-drp").classList.remove("active-drp")
+          }
+          dropdowns[index].classList.add("active-drp")
+        })
+
+        element.addEventListener("mouseleave",()=>{
+          dropdowns[index].classList.remove("active-drp")
+        })
+      }
+    })
+
+    dropdowns.forEach((element)=>{
+      element.addEventListener("mouseleave",()=>{
+        element.classList.remove("active-drp")
+      })
+      element.addEventListener("mouseover",()=>{
+        element.classList.add("active-drp")
+      })
+    })
   },
   methods:{
     headerScroll:function(){
@@ -104,7 +190,7 @@ export default {
     top:0;
     display:flex;
     align-items: center;  
-    z-index: 999999999;
+    z-index: 99999999;
   }
   .logo{
     width:16em;
@@ -121,6 +207,7 @@ export default {
   .nav-items a{
     text-decoration: none;
     color:#4A494A;
+    width: fit-content;
   }
   .items{
     display:inline-block;
@@ -134,6 +221,42 @@ export default {
     width: 1.4em;
     vertical-align: middle;
     transform:scale(.6)
+  }
+
+
+  .dropdown{
+    background-color: white;
+    width:15vw;
+    position: absolute;
+    border-radius: 10px;
+    padding:.5vw 0;
+    z-index: 999999999999999;
+    box-shadow: #4A494A3A 3px 3px 10px 1px;
+    padding-bottom: .5vw;
+    display: none;
+  }
+  .dropdown a{
+    text-decoration: none;
+    color: #4A494A;
+  }
+  .dropdown .drp-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .drp-list .items{
+    width: 100%;
+    padding:.4vw 0;
+    text-align: center;
+  }
+  .drp-list .items:hover{
+    background-color: #4A494A3A;
+  }
+
+  .active-drp{
+    display:block
   }
 
 </style>
