@@ -1,7 +1,7 @@
 <template>
 
 <!-- popups -->
-<div class="services-drp dropdown inactive-drp">
+<div class="services-drp dropdown">
   <ul class="drp-list">
     <li class="items"><a href="/products?prodName=application-testing">Application Testing</a></li>
     <li class="items"><a href="/products?prodName=infrastructure-testing">Infrastructure Testing</a></li>
@@ -11,13 +11,13 @@
   </ul>
 </div>
 
-<div class="partners-drp dropdown inactive-drp">
+<div class="partners-drp dropdown">
   <ul class="drp-list">
     <li class="items"><a href="/partners">Become a Partner</a></li>
   </ul>
 </div>
 
-<div class="knowHow-drp dropdown inactive-drp">
+<div class="knowHow-drp dropdown">
   <ul class="drp-list">
     <li class="items"><a href="/blogs">Blog</a></li>
     <li class="items"><a href="/news">Cybersecurity News</a></li>
@@ -27,14 +27,14 @@
   </ul>
 </div>
 
-<div class="learnMore-drp dropdown inactive-drp">
+<div class="learnMore-drp dropdown">
   <ul class="drp-list">
     <li class="items"><a href="/about-us">About us</a></li>
     <li class="items"><a href="/careers">Careers</a></li>
   </ul>
 </div>
 
-<div class="information-drp dropdown inactive-drp">
+<div class="information-drp dropdown">
   <ul class="drp-list">
     <li class="items"><a href="/get-in-touch">Get in touch</a></li>
     <li class="items"><a href="">Privacy Policy</a></li>
