@@ -11,6 +11,7 @@ import News from "./components/News.vue"
 import GetInTouch from "./components/GetInTouch.vue"
 import Products from "./components/Products.vue"
 import Admin from "./components/admin.vue"
+import Dashboard from "./components/Dashboard.vue"
 import {createRouter,createWebHistory} from 'vue-router'
 
 const routes = [
@@ -18,56 +19,61 @@ const routes = [
         path:"/",
         name:"Index",
         component:Index
-    },
-    {
+    }
+    ,{
         path:"/partners",
         name:"Partners",
         component:Partners
-    },
-    {
+    }
+    ,{
         path:"/services",
         name:"Services",
         component:Services
-    },
-    {
+    }
+    ,{
         path:"/about-us",
         name:"About us",
         component:AboutUs
-    },
-    {
+    }
+    ,{
         path:"/know-how",
         name:"Know How",
         component:KnowHow
-    },
-    {
+    }
+    ,{
         path:"/careers",
         name:"Careers",
         component:Careers
-    },
-    {
+    }
+    ,{
         path:"/blogs",
         name:"Blogs",
         component:Blogs
-    },
-    {
+    }
+    ,{
         path:"/news",
         name:"News",
         component:News
-    },
-    {
+    }
+    ,{
         path:"/get-in-touch",
         name:"Get in touch",
         component:GetInTouch
-    },
-    {
+    }
+    ,{
         path:"/products",
         name:"Products",
         component:Products
-    },
-    {
+    }
+    ,{
         path:"/admin",
         name:"Admin",
         component:Admin
+    }
+    ,{
+        path:"/admin/dashboard",
+        name:"dashboard",
+        component:Dashboard
     }
 ]
 

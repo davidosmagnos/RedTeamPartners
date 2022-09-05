@@ -12,6 +12,18 @@ class UserService{
 
         return data
     }
+
+    static addUser(username,password,first_name,last_name){
+        return axios.post(url,{
+            username,
+            password,
+            first_name,
+            last_name
+        })
+    }
+    static deleteUser(id){
+        return axios.delete(`${url}${id}`)
+    }
 }
 
 export default UserService;
