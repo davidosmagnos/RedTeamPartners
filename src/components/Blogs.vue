@@ -31,6 +31,7 @@
                     link:'/',
                     title:"Title:The title",
                     description:'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from....',
+                    buttonText:"Read More"
                 })
 
                 const wrapper = document.createElement("div");

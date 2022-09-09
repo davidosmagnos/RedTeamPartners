@@ -6,7 +6,10 @@
                 <span><span class="redText">Blogs</span></span>
             </div>
             <div class="blogs-wrapper" id="blogs-wrapper">
-                <Blogs v-for="blog in blogsList" :key="blog" :title="blog.blog_name" :description="blog.blog_description" button-text="Read More" :link="blog.blog_link"/>
+                <!-- <Blogs v-for="blog in blogsList" :key="blog" :title="blog.blog_name" :description="blog.blog_description" button-text="Read More" :link="blog.blog_link"/> -->
+                <Blogs title="Title:The title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum eum quas tenetur beatae id voluptatem iste " link="/" button-text="Read More"/>
+                <Blogs title="Title:The title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum eum quas tenetur beatae id voluptatem iste " link="/" button-text="Read More"/>
+                <Blogs title="Title:The title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum eum quas tenetur beatae id voluptatem iste " link="/" button-text="Read More"/>
             </div>
             <a href="/blogs" class="seeMore">See More >></a>
         </div>
@@ -15,7 +18,9 @@
                 <span>Our latest <span class="redText">work </span>and <span class="redText">news</span></span>
             </div>
             <div class="news-wrapper" id="news-wrapper">
-                <News img='bg1.jpg'/>
+                <News title="Title:The title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum eum quas tenetur beatae id voluptatem iste " link="/" img="bg1.jpg"/>
+                <News title="Title:The title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum eum quas tenetur beatae id voluptatem iste " link="/" img="bg1.jpg"/>
+                <News title="Title:The title" description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum eum quas tenetur beatae id voluptatem iste " link="/" img="bg1.jpg"/>
             </div>
             <a href="/news" class="seeMore">See More >></a>
         </div>
