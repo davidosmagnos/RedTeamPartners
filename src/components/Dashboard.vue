@@ -1,4 +1,5 @@
 <template>
+    <button class="logout" @click="logout">Logout</button>
     <div class="users-section">
         <h1>Users</h1>
         <div class="user-cont">
@@ -17,20 +18,37 @@
                     <td class="buttons" @click="deleteUser(user.username)"><button>delete</button></td>
                 </tr>
                 <tr class="insert">
-                    <td><input type="text" name="newUname" v-model="newUname"></td>
-                    <td><input type="text" name="newPassword" v-model="newFname"></td>
-                    <td><input type="text" name="newFname" v-model="newLname"></td>
-                    <td><input type="text" name="newLname" v-model="newPass"></td>
+                    <td><input type="text" name="newUname" v-model="newUname" placeholder="Add username"></td>
+                    <td><input type="text" name="newPassword" v-model="newFname" placeholder="Add First name"></td>
+                    <td><input type="text" name="newFname" v-model="newLname" placeholder="Add Lastname"></td>
+                    <td><input type="text" name="newLname" v-model="newPass" placeholder="Add password"></td>
                     <td><button @click="addUser">Add</button></td>
                 </tr>
            </table>
         </div>
     </div>
+    <div class="deleteModal">
+        <span class="delete" @click="deleteBlog">Delete</span>
+    </div>
+    <div class="blog-section">
+        <h1>Blogs</h1>
+        <router-link to="/admin/dashboard/blog-editor?mode=add"><button class="addBlog">Add blog</button></router-link> 
+        <div class="blogs-cont">
+           <BlogsComp v-for="(blogs,index) in blogsList" :key="blogs" :title="blogs.blog_name" :description="blogs.blog_description" :link="`/admin/dashboard/blog-editor?mode=insert&id=${blogs.blog_id}`" button-text="Edit" class="blog" @click="showDelete(blogs.blog_id,index)"/>
+        </div>
+    </div>
 </template>
 <script>
-    import UserService from '@/UserService'
+    
+    import BlogService from '@/BlogService'
+import UserService from '@/UserService'
+    import BlogsComp from '../components/blogs-component.vue'
+    
     export default{
         name:"Dashboard-page",
+        components:{
+            BlogsComp
+        },
         data(){
             return{
                 usersList:[],
@@ -38,14 +56,23 @@
                 newPass:"",
                 newFname:"",
                 newLname:"",
+                blogsList:[],
+                blog_id:"",
             }
+        },
+        beforeCreate(){
+            if(sessionStorage.getItem("loggedIn")==null){
+                location.href = "/admin"
+        }
         },
         async created(){
             try{
                 this.usersList = await UserService.getAllUsers();
+                this.blogsList = await BlogService.getAllBlogs()
             }catch(err){
                 console.log(err)
             }
+
         },
         methods:{
             async addUser(){
@@ -61,58 +88,46 @@
             async deleteUser(id){
                 await UserService.deleteUser(id);
                 this.usersList = await UserService.getAllUsers();
+            },
+            logout(){
+                sessionStorage.removeItem('loggedIn');
+                location.href= '/admin'
+            },
+            showDelete(id,index){
+                const deleteModal = document.querySelector(".deleteModal")
+                const blog = document.querySelectorAll(".blog")[index];
+
+                const x = window.scrollX + blog.getBoundingClientRect().right;
+                const y = window.scrollY + blog.getBoundingClientRect().top;
+
+                deleteModal.style.top = y+"px";
+                deleteModal.style.left = x+5+"px"
+
+                deleteModal.style.display="flex";
+                this.blog_id = id
+            },
+            async deleteBlog(){
+                    const deleteModal = document.querySelector(".deleteModal")
+                    await BlogService.deleteBlog(this.blog_id);
+                    this.blogsList = await BlogService.getAllBlogs();
+                    deleteModal.style.display = "none";
+            }
+        },
+        
+    }
+    document.addEventListener("click",(e)=>{
+        if(e.target.classList[0]=="blogs"){
+            //pass
+        }else{
+            try{
+                document.querySelector(".deleteModal").style.display="none"
+            }
+            catch(err){
+                // pass
             }
         }
-    }
+    })
 </script>
-<style scoped>
-    :root{
-    --red:#D41539;
-    --gray:#4A494A;
-    --line:#4A494A3A;
-}
-    .user-cont{
-        width: 80%;
-        margin: 2vw auto;
-    }
-    .users-section{
-        padding:1vw;
-    }
-   .user-table{
-    width: 100%;
-    border-collapse: collapse;
-   }
-   .user-table td{
-    text-align: center;
-    padding:.7vw
-   }
-   .user-table input{
-        border-bottom: 1px solid var(--gray);
-        border-width: 0 0 1px;
-        width: 90%;
-        outline: none;
-        padding:.5vw
-   }
-   .user-table button{
-        box-sizing: border-box;
-        padding:.5vw 2vw;
-        border:none;
-        background-color: var(--red);
-        color:white;
-        border-radius: 5px;
-        cursor: pointer;
-   }
-   .data:hover{
-    background-color: #D415393A;
-   }
-
-   .buttons{
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: .2s ease-in;
-   }
-   .data:hover .buttons{
-        transform: scaleX(1);
-   }
-   
+<style scoped src="../assets/css/dashboard.css">
+ 
 </style>

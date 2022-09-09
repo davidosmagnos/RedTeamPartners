@@ -12,6 +12,7 @@ import GetInTouch from "./components/GetInTouch.vue"
 import Products from "./components/Products.vue"
 import Admin from "./components/admin.vue"
 import Dashboard from "./components/Dashboard.vue"
+import BlogEditor from "./components/BlogEditor.vue"
 import {createRouter,createWebHistory} from 'vue-router'
 
 const routes = [
@@ -74,6 +75,11 @@ const routes = [
         path:"/admin/dashboard",
         name:"dashboard",
         component:Dashboard
+    }
+    ,{
+        path:"/admin/dashboard/blog-editor",
+        name:"blog-editor",
+        component:BlogEditor
     }
 ]
 

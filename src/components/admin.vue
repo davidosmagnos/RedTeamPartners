@@ -6,6 +6,7 @@
                 <input type="text" placeholder="Username" v-model="username" required>
                 <input type="password" placeholder="Password" v-model="password">
                 <button @click="login" type="submit">Login</button>
+                <p class="error" v-if="error">{{this.error}}</p>
             </div>
         </div>
     </div>
@@ -18,25 +19,37 @@
             return{
                 userDets:[],
                 username:"",
-                password:""
+                password:"",
+                error:""
             }
+        },
+        created(){
+            window.addEventListener("keyup",e=>{
+                if(e.key == "Enter"){
+                    this.login()
+                }
+            })
         },
         methods:{
             async login(){
                 if(this.username != ""){
                     const user = await UserService.getUser(this.username);
                     if(user.length === 0){
-                        alert("fuck")
+                        this.error = "Incorrect credentials"
                     }else if(user.length > 0){
                         if(user[0].password == this.password){
-                            alert("logged in")
+                            sessionStorage.setItem("loggedIn",true);
+                            location.href = "/admin/dashboard"
                         }else{
-                            alert("incorrect credentials")
+                            this.error= "incorrect credentials"
                         }
                     }
 
                 }
-            }
+                else{
+                    this.error = "Username field is empty"
+                }
+            },
         }
     }
 </script>
@@ -85,5 +98,9 @@
         padding:.5vw;
         border: none;
         border-radius: 5px;
+    }
+    .error{
+        color:red;
+        text-align: center;
     }
 </style>

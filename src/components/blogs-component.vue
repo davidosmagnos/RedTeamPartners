@@ -1,8 +1,6 @@
 <template>
     <div class="blogs">
-        <form :action="link">
-            <button class="readMore" type="submit">Read More</button>
-        </form>
+        <a :href="link"><button class="readMore" type="submit">{{buttonText}}</button></a>
         <div class="blog-textContent">
         <h4 class="blog-title">
             {{title}}
@@ -17,7 +15,8 @@
         props:{
             link:String,
             title:String,
-            description:String
+            description:String,
+            buttonText:String
         }
     }
 </script>
